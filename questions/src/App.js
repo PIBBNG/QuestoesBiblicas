@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider, connect } from 'react-redux';
 import store from './store';
-
+import { Helmet } from 'react-helmet';
 import Home from './Home';
 
 const Router = () => {
@@ -35,6 +35,9 @@ export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
+        <Helmet>
+          <style>{'body { background-color: dodgerblue; }'}</style>
+        </Helmet>
         <ConnectedRouter />
       </Provider>
     )

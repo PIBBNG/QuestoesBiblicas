@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import InitialForm from './Form';
 
 export default class Home extends React.Component {
     constructor(props){
@@ -11,9 +12,7 @@ export default class Home extends React.Component {
     render() {
       return (
         <div>
-          <p>
-            Página Inicial :)
-          </p>
+          <InitialForm />
         </div>
       )
     }
