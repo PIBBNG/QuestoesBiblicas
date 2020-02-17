@@ -1,12 +1,17 @@
 import React from 'react';
-import Rectangle from 'react-rectangle';
-
+            
 export default class InitialForm extends React.Component {
 
+    
     render(){
         return(    
-            <div>
-                <p>Teste!</p>
+            <div className='card shadow'>
+                <div className='card-header text-center'>
+                    <h5 className="card-title">Questionário Bíblico!</h5>
+                </div>
+                <div className='card-body'>
+                    <p>Teste</p>
+                </div>
             </div>
         )
     }

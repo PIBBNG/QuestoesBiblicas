@@ -1,5 +1,14 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import InitialForm from './Form';
+
+const box = {
+  position: 'fixed',
+  top: '50%',
+  left: '25%',
+  width: '100%',
+  height: '100%',
+  marginTop: '-15%',
+ }
 
 export default class Home extends React.Component {
     constructor(props){
@@ -11,8 +20,14 @@ export default class Home extends React.Component {
   
     render() {
       return (
-        <div>
-          <InitialForm />
+        <div style={box}>
+          <div className='container-fluit mt--6'>
+              <div className='row'>  
+                  <div className='col-6'>
+                    <InitialForm />
+                  </div>
+              </div>
+          </div>
         </div>
       )
     }

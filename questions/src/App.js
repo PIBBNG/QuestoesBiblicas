@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider, connect } from 'react-redux';
 import store from './store';
@@ -36,7 +35,7 @@ export default class App extends React.Component {
     return (
       <Provider store={store}>
         <Helmet>
-          <style>{'body { background-color: dodgerblue; }'}</style>
+          <style>{'body { background-color: dodgerblue; heigth: 100% margin: 0;}'}</style>
         </Helmet>
         <ConnectedRouter />
       </Provider>
