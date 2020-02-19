@@ -1,5 +1,5 @@
 import React from 'react';
-import InitialForm from './Form';
+import InitialForm from './containers/Form';
 
 const box = {
   position: 'fixed',

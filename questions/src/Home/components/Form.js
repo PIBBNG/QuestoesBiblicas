@@ -1,6 +1,8 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 
+export const initialFormName = "initial_form";
+
 const Button = (props) => {
     const className = props.className || '';
     return (
