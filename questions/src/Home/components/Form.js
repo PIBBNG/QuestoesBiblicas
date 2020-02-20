@@ -1,5 +1,7 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
+import { createSession } from '../api';
+import { setNewSession } from '../actions';
 
 export const initialFormName = "initial_form";
 
@@ -39,7 +41,8 @@ class Form extends React.Component {
         return (
             <form onSubmit={this.props.handleSubmit}>
                 <RenderField label='Questionário:' name='questions' component='select'>
-                {questions.map((value) => <option key={value['id']} value={value['title']}>{value['title']}</option>)}
+                    <option key={-1} value={""}>Selecione um questionário</option>
+                    {questions.map((value) => <option key={value['id']} value={value['title']}>{value['title']}</option>)}
                 </RenderField>
                 <br></br>
                 <RenderField label='Equipe 1:' name='team1' component='input' type='text'/>
@@ -47,7 +50,7 @@ class Form extends React.Component {
                 <RenderField label='Equipe 3:' name='team3' component='input' type='text'/>
                 <br></br>
                 <Button type='submit' className='mr-2'>Enviar</Button>
-                {/* {<Button onClick={() => this.props.reset()}>Limpar</Button>} */}
+                <Button onClick={() => this.props.reset()}>Limpar</Button>
             </form>
         );
     }
@@ -55,7 +58,30 @@ class Form extends React.Component {
 
 function submit(values, dispatch, props){
     console.log(values);
-    console.log('olá!');
+    const { questions, team1, team2, team3 } = values;
+    var teams_set = []
+    if(team1){
+        teams_set.push(team1.replace(" ", "-"));
+    }
+    if(team2){
+        teams_set.push(team2.replace(" ", "-"));
+    }
+    if(team3){
+        teams_set.push(team3.replace(" ", "-"));
+    }
+
+    const params = {
+        'acampsQuestions': questions,
+        'teams': teams_set,
+    }
+
+    return createSession(params).then((response) => {
+        console.log(response.data)
+        dispatch(setNewSession(response.data));
+    }).catch(() => {
+        dispatch(setNewSession({session_id: -1}));  
+    });
+
 }
 
 const InitialForm = reduxForm({
@@ -72,7 +98,7 @@ class Component extends React.Component {
                 <div className='card-header text-center'>
                     <h5 className="card-title">Questionário Bíblico!</h5>
                 </div>
-                <div className='card-body'>
+                <div className='card-body card-responsive-sm'>
                     <InitialForm
                         {...this.props}
                         questions={acampsQuestions}

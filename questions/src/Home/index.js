@@ -3,8 +3,8 @@ import InitialForm from './containers/Form';
 
 const box = {
   position: 'fixed',
-  top: '50%',
-  left: '25%',
+  top: '40%',
+  left: '23%',
   width: '100%',
   height: '100%',
   marginTop: '-15%',

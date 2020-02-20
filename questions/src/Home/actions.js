@@ -4,3 +4,10 @@ export function setAcampsQuestions(acamps){
         payload: acamps
     };
 }
+
+export function setNewSession(session_id){
+    return {
+        type: "SET_NEW_SESSION",
+        payload: session_id
+    }
+}
