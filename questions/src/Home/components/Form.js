@@ -36,7 +36,6 @@ class Form extends React.Component {
     
     render() {
         const { questions } = this.props;
-        console.log(questions);
         return (
             <form onSubmit={this.props.handleSubmit}>
                 <RenderField label='Questionário:' name='questions' component='select'>
@@ -47,19 +46,25 @@ class Form extends React.Component {
                 <RenderField label='Equipe 2:' name='team2' component='input' type='text'/>
                 <RenderField label='Equipe 3:' name='team3' component='input' type='text'/>
                 <br></br>
-                <Button className='mr-2'>Enviar</Button>
-                <Button onClick={() => this.props.reset()}>Limpar</Button>
+                <Button type='submit' className='mr-2'>Enviar</Button>
+                {/* {<Button onClick={() => this.props.reset()}>Limpar</Button>} */}
             </form>
         );
     }
 }
 
-function submit(values, dispatch){
+function submit(values, dispatch, props){
     console.log(values);
     console.log('olá!');
 }
 
-class InitialForm extends React.Component {
+const InitialForm = reduxForm({
+    form: initialFormName,
+    onSubmit: submit,
+    destroyOnUnmount: false,
+})(Form);
+
+class Component extends React.Component {
     render(){
         const { acampsQuestions } = this.props;
         return(    
@@ -68,7 +73,8 @@ class InitialForm extends React.Component {
                     <h5 className="card-title">Questionário Bíblico!</h5>
                 </div>
                 <div className='card-body'>
-                    <Form
+                    <InitialForm
+                        {...this.props}
                         questions={acampsQuestions}
                     />
                 </div>
@@ -78,10 +84,5 @@ class InitialForm extends React.Component {
 
 }
 
-const Component = reduxForm({
-    form: 'initQuestions',
-    onSubmit: submit,
-    destroyOnUnmount: false,
-})(InitialForm);
 
 export default Component
