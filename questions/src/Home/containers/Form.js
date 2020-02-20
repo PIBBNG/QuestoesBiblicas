@@ -16,7 +16,6 @@ class Container extends React.Component {
             dispatch(setAcampsQuestions([]));  
         });
     }
-
     render(){
         return (
             <Component
@@ -29,7 +28,7 @@ class Container extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        acampsQuestions: [],
+        acampsQuestions: state.home.acampsQuestions,
         formValues: getFormValues(initialFormName)(state)
     };
 };

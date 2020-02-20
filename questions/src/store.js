@@ -3,7 +3,7 @@ import { homeReducer } from './Home/reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const reducers = combineReducers({
-    homeReducer,
+    home: homeReducer,
 });
 const store = createStore(reducers, composeWithDevTools());
 

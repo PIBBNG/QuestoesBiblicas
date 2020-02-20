@@ -33,14 +33,14 @@ const RenderField = ({label, children, ...props }) => {
 
 
 class Form extends React.Component {
+    
     render() {
-        
+        const { questions } = this.props;
+        console.log(questions);
         return (
             <form onSubmit={this.props.handleSubmit}>
                 <RenderField label='Questionário:' name='questions' component='select'>
-                    <option value='1'>Questionário 1</option>
-                    <option value='2'>Questionário 2</option>
-                    <option value='3'>Questionário 3</option>
+                {questions.map((value) => <option key={value['id']} value={value['title']}>{value['title']}</option>)}
                 </RenderField>
                 <br></br>
                 <RenderField label='Equipe 1:' name='team1' component='input' type='text'/>
@@ -61,13 +61,16 @@ function submit(values, dispatch){
 
 class InitialForm extends React.Component {
     render(){
+        const { acampsQuestions } = this.props;
         return(    
             <div className='card shadow'>
                 <div className='card-header text-center'>
                     <h5 className="card-title">Questionário Bíblico!</h5>
                 </div>
                 <div className='card-body'>
-                    <Form/>
+                    <Form
+                        questions={acampsQuestions}
+                    />
                 </div>
             </div>
         )
