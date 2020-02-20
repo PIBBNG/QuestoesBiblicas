@@ -2,6 +2,7 @@ import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { createSession } from '../api';
 import { setNewSession } from '../actions';
+import history from '../../history'
 
 export const initialFormName = "initial_form";
 
@@ -76,8 +77,9 @@ function submit(values, dispatch, props){
     }
 
     return createSession(params).then((response) => {
-        console.log(response.data)
         dispatch(setNewSession(response.data));
+        history.push('/question')
+        window.location.reload();
     }).catch(() => {
         dispatch(setNewSession({}));  
     });

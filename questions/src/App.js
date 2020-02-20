@@ -4,13 +4,16 @@ import { Provider, connect } from 'react-redux';
 import store from './store';
 import { Helmet } from 'react-helmet';
 import Home from './Home';
+import Question from './Question';
+import history from './history';
 
 const Router = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter history={history}>
       <div className='container-fluid'>
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/question' component={Question} />
         </Switch>
       </div>
     </BrowserRouter>
