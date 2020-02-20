@@ -5,9 +5,9 @@ export function setAcampsQuestions(acamps){
     };
 }
 
-export function setNewSession(session_id){
+export function setNewSession(session_date){
     return {
         type: "SET_NEW_SESSION",
-        payload: session_id
+        payload: session_date
     }
 }

@@ -79,7 +79,7 @@ function submit(values, dispatch, props){
         console.log(response.data)
         dispatch(setNewSession(response.data));
     }).catch(() => {
-        dispatch(setNewSession({session_id: -1}));  
+        dispatch(setNewSession({}));  
     });
 
 }

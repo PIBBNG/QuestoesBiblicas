@@ -9,7 +9,9 @@ export function homeReducer(state=initialState, action){
         case "SET_ACAMPS_QUESTIONS":
             return {...state, acampsQuestions: action.payload};
         case "SET_NEW_SESSION":
-            return {...state, session: action.payload}
+            return {...state, 
+                    session: action.payload.session,
+                    teams: action.payload.teams}
         default:
             return state;
     }
