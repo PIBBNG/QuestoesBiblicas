@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Component, { initialFormName } from '../components/Form';
-import { getFormValues } from 'redux-form';
+import { getFormValues } from 'redux-form/immutable';
 import { fetchAcampsQuestions } from '../api';
 import { setAcampsQuestions } from '../actions';
 

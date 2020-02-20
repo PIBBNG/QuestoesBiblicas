@@ -5,7 +5,7 @@ import { createLogger } from 'redux-logger'
 
 const reducers = combineReducers({
     home: homeReducer,
-    forms: reducer,
+    form: reducer,
 });
 
 const log = createLogger({
