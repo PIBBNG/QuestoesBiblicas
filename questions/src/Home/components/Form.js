@@ -6,7 +6,7 @@ import history from '../../history'
 
 export const initialFormName = "initial_form";
 
-const Button = (props) => {
+export const Button = (props) => {
     const className = props.className || '';
     return (
         <button

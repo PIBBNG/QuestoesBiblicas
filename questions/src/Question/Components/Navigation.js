@@ -5,9 +5,9 @@ class SelectQuestion extends React.Component {
     render () {
         const teste = ""
         return(
-            <a className={"list-group-item list-group-item-action "+teste} active="true">
+            <div key={this.props.index} className={"list-group-item list-group-item-action "+teste} active="true">
                 {this.props.question.id}
-            </a>
+            </div>
         )
     }
 }
@@ -148,6 +148,7 @@ class Navigation extends React.Component {
                 {questions.map((question, index) =>
                     <SelectQuestion
                         question={question}
+                        index={index}
                     />
                 )}
             </div>
@@ -156,10 +157,3 @@ class Navigation extends React.Component {
 }
 
 export default Navigation
-
-// {barcodes.map((barcode, index) => 
-//     <tr>
-//       <td>{index+1}</td>
-//       <td>{barcode}</td>
-//     </tr>
-//   )}
