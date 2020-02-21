@@ -9,15 +9,15 @@ import history from './history';
 
 const Router = () => {
   return (
-    <BrowserRouter history={history}>
-      <div className='container-fluid'>
+    <div className='container-fluid'>
+      <BrowserRouter history={history}>
         <Switch>
-          <Route exact path='/' component={Home} />
           <Route exact path='/question' component={Question} />
+          <Route exact path='/home' component={Home} />
         </Switch>
-      </div>
-    </BrowserRouter>
-  )
+      </BrowserRouter>
+    </div>
+)
 }
 
 const mapStateToProps = (state) => {

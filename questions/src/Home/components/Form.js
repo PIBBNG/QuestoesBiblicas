@@ -37,10 +37,16 @@ export const RenderField = ({label, children, ...props }) => {
 
 class Form extends React.Component {
     
+    handleSubmit = (values) => {
+        console.log('This values', values)
+        // this.props.history.push('/question');
+    }
+
+
     render() {
         const { questions } = this.props;
         return (
-            <form onSubmit={this.props.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
                 <RenderField label='Questionário:' name='questions' component='select'>
                     <option key={-1} value={""}>Selecione um questionário</option>
                     {questions.map((value) => <option key={value['id']} value={value['title']}>{value['title']}</option>)}

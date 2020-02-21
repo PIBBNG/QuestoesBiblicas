@@ -12,7 +12,7 @@ class Component extends React.Component {
                     </div>
                 </div>
                 <div className="row justify-content-md-center" style={{marginTop: '+5%'}}>
-                    <div className="col">
+                    <div className="col col-sm-2">
                         <Navigation/>
                     </div>
                     <div className="col">
