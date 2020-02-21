@@ -1,10 +1,21 @@
 import React from 'react';
+import { RenderField, Button } from '../../Home/components/Form';
+import ChooseQuestion from '../Containers/ChooseQuestion';
 
 class Navigation extends React.Component {
     render(){
         return(
-            <div className="list-group list-group-horizontal-sm" id="list-tab">
-                <p>Definir oq fazer para navegar pelas perguntas</p>
+            <div className="card">
+                <div className="card-header text-center">
+                    <p><b>Perguntas</b></p>
+                </div>
+                <div className="card-body">
+                    <div className="row">
+                        <div className="col">
+                            <ChooseQuestion/>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }

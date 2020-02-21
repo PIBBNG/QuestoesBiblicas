@@ -18,7 +18,7 @@ export const Button = (props) => {
     );
 };
 
-const RenderField = ({label, children, ...props }) => {
+export const RenderField = ({label, children, ...props }) => {
     const display = {display:props['display']}
     return (
         <div className='form-group row mb-0'>
