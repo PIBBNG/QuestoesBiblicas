@@ -106,6 +106,9 @@ class Component extends React.Component {
                         questions={acampsQuestions}
                     />
                 </div>
+                <div className='card-footer text-muted text-center'>
+                    Retiro Batista Bíblico 2020
+                </div>
             </div>
         )
     }

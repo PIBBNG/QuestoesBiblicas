@@ -38,7 +38,7 @@ export default class App extends React.Component {
     return (
       <Provider store={store}>
         <Helmet>
-          <style>{'body { background-color: dodgerblue; heigth: 100% margin: 0;}'}</style>
+          <style>{'body { background-color: dodgerblue;}'}</style>
         </Helmet>
         <ConnectedRouter />
       </Provider>

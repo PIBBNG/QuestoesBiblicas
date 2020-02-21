@@ -1,15 +1,6 @@
 import React from 'react';
 import InitialForm from './containers/Form';
 
-const box = {
-  position: 'fixed',
-  top: '40%',
-  left: '23%',
-  width: '100%',
-  height: '100%',
-  marginTop: '-15%',
- }
-
 export default class Home extends React.Component {
     constructor(props){
       super(props);
@@ -20,14 +11,12 @@ export default class Home extends React.Component {
   
     render() {
       return (
-        <div style={box}>
-          <div className='container-fluit mt--6'>
-              <div className='row'>  
-                  <div className='col-md-auto'>
-                    <InitialForm />
-                  </div>
-              </div>
-          </div>
+        <div class="container-fluid">
+          <div class="row mt-5 justify-content-md-center">  
+                <div className='col-md-auto'>
+                  <InitialForm />
+                </div>
+            </div>
         </div>
       )
     }
