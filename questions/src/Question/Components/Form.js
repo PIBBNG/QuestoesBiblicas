@@ -110,7 +110,7 @@ class Form extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className='row' style={{marginTop: '+2%'}}>
+                    <div className='row text-center' style={{marginTop: '+2%'}}>
                         <div className='col'>
                             <Button className='mr-2'>Voltar</Button>
                         </div>

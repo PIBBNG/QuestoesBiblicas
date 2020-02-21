@@ -5,13 +5,13 @@ import Card from './Card'
 class Component extends React.Component {
     render(){
         return(
-            <div className='container-fluit h-auto'>
+            <div className='container-fluit'>
                 <div className="row justify-content-md-center" style={{marginTop: '+2%'}}>
-                    <div className="col-md-auto">
+                    <div className="col col-sm-auto">
                         <Navigation/>
                     </div>
                 </div>
-                <div className="row h-100" style={{marginTop: '+5%'}}>
+                <div className="row justify-content-md-center" style={{marginTop: '+5%'}}>
                     <div className="col">
                         <Card/>
                     </div>
