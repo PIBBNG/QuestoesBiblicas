@@ -23,7 +23,7 @@ export default class Home extends React.Component {
         <div style={box}>
           <div className='container-fluit mt--6'>
               <div className='row'>  
-                  <div className='col-6'>
+                  <div className='col-md-auto'>
                     <InitialForm />
                   </div>
               </div>
